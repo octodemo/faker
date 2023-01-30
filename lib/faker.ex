@@ -28,7 +28,8 @@ defmodule Faker do
   """
   @spec format(String.t()) :: String.t()
   def format(str) when is_binary(str) do
-    format(str, "")
+    username = String.downcase(username)
+    "Hi #{str}"
   end
 
   defp format(<<"#"::utf8, tail::binary>>, acc) do
