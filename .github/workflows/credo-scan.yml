@@ -30,9 +30,12 @@ jobs:
       - run: mix deps.get
       - run: mix deps.compile
       - run: mix compile
-      # - run: mix test
-      - run: mix credo
-      - run: mix credo --format=sarif > credo_output.sarif
+      - name: credo
+        continue-on-error: true
+        run: mix credo
+      - name: credo2
+        continue-on-error: true
+        run: mix credo --format=sarif > credo_output.sarif
       # - run: sarif=$(mix credo --format=sarif) >> $GITHUB_OUTPUT
         # id: credo-sarif
       - name: upload sarif
