@@ -18,6 +18,10 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v3
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: ${{matrix.otp}}
+          elixir-version: ${{matrix.elixir}}
       - run: mix credo --format=sarif
       - uses: github/codeql-action/upload-sarif@v2
         with:
