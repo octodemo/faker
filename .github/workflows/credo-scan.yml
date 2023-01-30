@@ -31,7 +31,7 @@ jobs:
       - run: mix deps.compile
       - run: mix compile
       # - run: mix test
-      # - run: mix credo --strict
+      - run: mix credo
       - run: mix credo --format=sarif > credo_output.sarif
       # - run: sarif=$(mix credo --format=sarif) >> $GITHUB_OUTPUT
         # id: credo-sarif
