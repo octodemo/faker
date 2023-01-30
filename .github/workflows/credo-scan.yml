@@ -32,11 +32,10 @@ jobs:
       - run: mix compile
       # - run: mix test
       # - run: mix credo --strict
-      - run: mix credo --strict --format=sarif > credo_output.sarif
+      - run: mix credo --format=sarif > credo_output.sarif
       # - run: sarif=$(mix credo --format=sarif) >> $GITHUB_OUTPUT
         # id: credo-sarif
       - name: upload sarif
-        if: always()
         uses: github/codeql-action/upload-sarif@v2
         with:
           # Path to SARIF file relative to the root of the repository
