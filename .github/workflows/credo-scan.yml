@@ -31,10 +31,9 @@ jobs:
       - run: mix deps.compile
       - run: mix compile --warnings-as-errors
       - run: mix test
-      - name: credo-sarif
-        id: credo-sarif
-        run: echo "sarif=$(mix credo --format=sarif)" >> $GITHUB_OUTPUT
-      - uses: github/codeql-action/upload-sarif@v2
-        with:
-          # Path to SARIF file relative to the root of the repository
-          sarif_file: ${{steps.credo-sarif.outputss.sarif}}
+      - run: mix credo --format=sarif
+      - run: ls -a
+      # - uses: github/codeql-action/upload-sarif@v2
+      #   with:
+      #     # Path to SARIF file relative to the root of the repository
+      #     sarif_file:
