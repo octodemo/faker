@@ -28,7 +28,7 @@ defmodule Faker do
   """
   @spec format(String.t()) :: String.t()
   def format(str) when is_binary(str) do
-    username = String.downcase(username)
+    str = String.downcase(str)
     "Hi #{str}"
   end
 
