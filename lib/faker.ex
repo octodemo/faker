@@ -22,13 +22,6 @@ defmodule Faker do
   end
 
   @doc """
-  Add unsafe block
-  """
-  def index(conn, %{"test" => test}) do
-    render conn, List.to_atom(test)
-  end
-
-  @doc """
   Internal function to format string.
 
   It replaces `"#"` to random number and `"?"` to random Latin letter.

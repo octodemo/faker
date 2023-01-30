@@ -163,6 +163,8 @@ defmodule Faker.Util do
   @spec letter() :: binary
   localize(:letter)
 
+  
+
   @doc """
   Get a random lowercase character as a string; one of a-z
 
