@@ -35,7 +35,7 @@ jobs:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
       - name: install credo dependency
-        run: mix archive.install https://github.com/rrrene/credo v1.7.0-rc.1 51a2c1fd2c758f8048902491bf0de6bf59ac3d50
+        run: mix archive.install hex credo 1.7.0-rc.1
       - name: get dependencies 
         run: mix deps.get
       - name: compile dependencies
