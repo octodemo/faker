@@ -36,6 +36,8 @@ jobs:
           elixir-version: ${{matrix.elixir}}
       - name: install credo dependency
         run: mix archive.install hex credo 1.7.0-rc.1 --force
+      - name: build archive
+        run: mix archive.build
       - name: get dependencies 
         run: mix deps.get
       - name: compile dependencies
@@ -43,7 +45,7 @@ jobs:
       - name: compile
         run: mix compile
       - name: credo-scan
-        run: mix credo-1.7.0-rc.1 --format=sarif | tee credo_output.sarif
+        run: mix credo --format=sarif | tee credo_output.sarif
       - name: upload sarif
         uses: github/codeql-action/upload-sarif@v2
         with:
