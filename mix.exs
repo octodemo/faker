@@ -43,6 +43,7 @@ defmodule Faker.Mixfile do
     [
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:earmark, ">= 0.0.0", only: :dev, runtime: false},
+      {:jason, "~> 1.3", only: :dev, runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
     ]
   end
