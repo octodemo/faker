@@ -28,7 +28,8 @@ defmodule Faker do
   """
   @spec format(String.t()) :: String.t()
   def format(str) when is_binary(str) do
-    format(str, "")
+    String.downcase(str)
+    "Hi #{str}"
   end
 
   defp format(<<"#"::utf8, tail::binary>>, acc) do
@@ -51,6 +52,7 @@ defmodule Faker do
   defp letter do
     Enum.at(@alphabet, random_between(0, Enum.count(@alphabet) - 1))
   end
+
 
   @doc """
   Returns application locale ready for module construct.
