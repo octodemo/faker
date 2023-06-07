@@ -53,6 +53,7 @@ defmodule Faker do
     Enum.at(@alphabet, random_between(0, Enum.count(@alphabet) - 1))
   end
 
+
   @doc """
   Returns application locale ready for module construct.
   """
